@@ -3,3 +3,14 @@ numpy
 pandas
 pydeck
 streamlit
+google-cloud-bigquery
+db-dtypes
+plotly==5.4.0
+plotly-express==0.4.1
+xlsxwriter
+#chart-studio==1.1.0
+matplotlib==3.5.2
+Markdown==3.3.7
+networkx==2.8
+pyvis==0.3.2
+#protobuf~=3.19.0
