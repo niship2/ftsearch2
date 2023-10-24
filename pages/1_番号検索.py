@@ -60,7 +60,7 @@ df, df2 = get_table_by_appnum(appnum)
 df = df.rename(columns={"tmc_def": "分野", "def": "説明"})
 df2 = df2.rename(columns={"tmc_def": "分野", "def": "説明"})
 
-st.write(df)
+st.write(df, use_column_width=True)
 # st.write(df2)
 df_merge = pd.merge(df, df2).drop(
     columns=["tmc"]
@@ -142,8 +142,10 @@ with st.expander("出願人上位"):
     alldf["desc"] = alldf["説明"] + "(" + alldf["fterm"] + ")"
     st.write(
         alldf.groupby("appl_name")
-        .agg({"desc": "|".join, "appcount": "sum"})
-        .sort_values(by="appcount", ascending=False)
+        .agg({"desc": "|".join, "appcount": "sum", "fterm": "size"})
+        .rename(columns={"desc": "分野", "fterm": "共通分野数"})
+        .sort_values(by="appcount", ascending=False),
+        use_column_width=True,
     )
 
 
