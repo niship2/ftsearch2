@@ -70,20 +70,20 @@ df_merge = pd.merge(df, df2).drop(
 # df_merge = df_merge[-df_merge["分野"].str.contains(noiseword)]
 
 
+tmcs = df["fterm"].tolist()
+
+with st.sidebar.expander("選択したテーマコードに絞り込み", expanded=False):
+    option_theme = list(set([x[0:5] for x in tmcs]))
+    option_theme.sort()
+    options = st.multiselect("", option_theme, option_theme)
+
+
 with st.sidebar.expander("関連分野一覧", expanded=True):
     st.write(df[["fterm", "分野", "説明"]])
 
     fname = "分野一覧データ"
     link = make_download_link(df[["fterm", "分野", "説明"]], fname)
     st.write(link, unsafe_allow_html=True)
-
-
-tmcs = df["fterm"].tolist()
-
-with st.expander("選択したテーマコードに絞り込み", expanded=False):
-    option_theme = list(set([x[0:5] for x in tmcs]))
-    option_theme.sort()
-    options = st.multiselect("", option_theme, option_theme)
 
 df3 = agg_applicant(tmcs, att_applicant)
 
@@ -116,8 +116,7 @@ with st.expander(
 
     st.write("※線の数字は出願件数")
 
-st.markdown("___")
-
+# st.markdown("___")
 # st.write(selected_df3)
 # st.write(df_merge)
 
