@@ -55,12 +55,13 @@ if att_applicant == "":
     att_applicant = "###"
 
 
-st.markdown("### 関連Fターム（件数少ない分野は省略）")
-df, df2 = get_table_by_appnum(appnum)
-df = df.rename(columns={"tmc_def": "分野", "def": "説明"})
-df2 = df2.rename(columns={"tmc_def": "分野", "def": "説明"})
+with st.expander("関連Fターム"):
+    df, df2 = get_table_by_appnum(appnum)
+    df = df.rename(columns={"tmc_def": "分野", "def": "説明"})
+    df2 = df2.rename(columns={"tmc_def": "分野", "def": "説明"})
 
-st.write(df, use_column_width=True)
+    st.write(df, use_column_width=True)
+    st.write("※件数少ない分野は省略")
 # st.write(df2)
 df_merge = pd.merge(df, df2).drop(
     columns=["tmc"]
