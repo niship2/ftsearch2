@@ -2,3 +2,5 @@
 ./src/.streamlit/secrets.toml
 ./src/img/*.html
 ./img/*.html
+./mygraph.html
+mygraph.html

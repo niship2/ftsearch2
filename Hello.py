@@ -26,6 +26,7 @@ def run():
 
     st.write("# シーズ活用先探索! 👋")
     st.sidebar.success("Select a demo above.")
+    st.set_page_config(page_title="News", page_icon="📹", layout="wide")
 
 
 if __name__ == "__main__":
