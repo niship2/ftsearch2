@@ -19,13 +19,7 @@ LOGGER = get_logger(__name__)
 
 
 def run():
-    st.set_page_config(
-        page_title="Hello",
-        page_icon="👋",
-    )
-
     st.write("# シーズ活用先探索! 👋")
-    st.sidebar.success("Select a demo above.")
     st.set_page_config(page_title="News", page_icon="📹", layout="wide")
 
 

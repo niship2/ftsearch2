@@ -14,3 +14,4 @@ Markdown==3.3.7
 networkx==2.8
 pyvis==0.3.2
 #protobuf~=3.19.0
+openpyxl
