@@ -4,3 +4,4 @@
 ./img/*.html
 ./mygraph.html
 mygraph.html
+**/__pycache__/**

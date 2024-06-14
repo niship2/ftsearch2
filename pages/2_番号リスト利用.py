@@ -34,7 +34,7 @@ def mapping_demo():
     with st.expander("データ入力"):
         tab1, tab2 = st.tabs(["コピペ", "ファイルアップロード"])
         with tab1:
-            df = st.data_editor(init_df, num_rows="dynamic", use_container_width=False)
+            df = st.data_editor(init_df, num_rows="dynamic", use_container_width=True)
             appl_col = "出願人"
             analyze_col = "分析対象項目"
 
